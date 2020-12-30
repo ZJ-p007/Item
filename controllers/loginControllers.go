@@ -24,16 +24,15 @@ func (c *LoginController) Post() {
 	}
 
 	//2、根据解析到的数据,执行数据库查询操作
-	u, err := user.QuerUser()
+	_, err = user.QuerUser()
 	//3、判断数据库查询结果
 	if err != nil {
 		//fmt.Println(err.Error())
 		//fmt.Println("ffff为:",u)
-		fmt.Println("2222",err.Error())
+		//fmt.Println("2222",err.Error())
 		c.Ctx.WriteString("抱歉，用户登录失败，请重试")
 		return
 	}
-	c.Data["Phone"] = u.Phone
 	c.TplName = "home.html"
 }
 
