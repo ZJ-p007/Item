@@ -50,5 +50,6 @@ func main() {
 		fmt.Println("监听失败，错误信息为:", err)
 		//return
 	*/
+
 	beego.Run()
 }
